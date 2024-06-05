@@ -1,0 +1,3 @@
+We would appreciate having access to detailed information about the destination city, including local customs, transportation options, and housing markets. Additionally, providing cost estimates for various relocation-related expenses (e.g., moving, travel) and offering cultural orientation support would be extremely valuable in making the transition smoother.
+
+Please let me know if this meets your expectations!

@@ -1,0 +1,1 @@
+How might we help our customers to access detailed information about destination cities, including local customs, transportation options, and housing markets, in order to make their relocation smoother?

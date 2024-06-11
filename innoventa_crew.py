@@ -48,6 +48,19 @@ ux_converger = Agent(
   llm = llm
 )
 
+solution_picker = Agent(
+  role='Senior Software Engineer',
+  goal='Pick the most promisable solution for a prototype',
+  verbose=True,
+  memory=True,
+  backstory=(
+    "You are an experienced Software Engineer."
+    "your experience helps you to select the most promisable solution for a prototype."
+  ),
+  allow_delegation=False,
+  llm = llm
+)
+
 sw_engineer = Agent(
   role='Senior Software Engineer',
   goal='Create a variety of solutions for customers problem',
@@ -76,6 +89,7 @@ interview = Task(
   ),
   expected_output='A list of 5 questions you will ask a potential customer.',
   agent=interviewer,
+  output_file='ux_questions.md',  
   verbose=True
 )
 
@@ -125,7 +139,7 @@ build_prototype = Task(
     "Use max 500 characters."
   ),
   expected_output='a prompt for wiregen with 500 characters.',
-  agent=sw_engineer,
+  agent=solution_picker,
   async_execution=False,
   output_file='solution_prompt.md',  
   verbose=True

@@ -48,19 +48,6 @@ ux_converger = Agent(
   llm = llm
 )
 
-solution_picker = Agent(
-  role='Senior Software Engineer',
-  goal='Pick the most promisable solution for a prototype',
-  verbose=True,
-  memory=True,
-  backstory=(
-    "You are an experienced Software Engineer."
-    "your experience helps you to select the most promisable solution for a prototype."
-  ),
-  allow_delegation=False,
-  llm = llm
-)
-
 sw_engineer = Agent(
   role='Senior Software Engineer',
   goal='Create a variety of solutions for customers problem',

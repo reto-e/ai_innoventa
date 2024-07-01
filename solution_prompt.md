@@ -1,11 +1,19 @@
-"Here's my prompt for wiregen: 'Create an immersive experience that guides expats through their relocation journey. The app should combine the insights of Cultural Compass, Relocation Roadmap, and Expert Advice to provide a clear roadmap for settling into a new country. Key features include:
+**Prompt for wiregen:**
 
-* An interactive map highlighting cultural differences and local practices (Cultural Compass)
-* A step-by-step guide breaking down the relocation process into manageable tasks (Relocation Roadmap)
-* Access to expert advice from relocation professionals, expats, and locals on topics like job hunting, finding accommodations, and navigating bureaucracy (Expert Advice)
-* A gamified learning approach teaching users about local customs, cultural norms, and practical tips for everyday life
-* A customizable checklist helping users stay organized and on track as they prepare for relocation
+"Create an intuitive mobile app that helps hosts plan, organize, and execute a seamless and stress-free barbecue party experience for their guests. The app should feature a weather watcher to ensure optimal party timing, a guest manager to track RSVPs and special requests, a menu master to customize the barbecue menu, and a time-saving timer to keep everything on schedule. Additionally, include smart shopping lists, fun finder games and activities for kids, cancellation conductor communication tools, and grill guru expert grilling tips. The app should be user-friendly, visually appealing, and provide a comprehensive experience for hosts to ensure a successful and enjoyable party."
 
-This comprehensive app will help expats navigate the complexities of relocating abroad with confidence and ease. The ultimate goal is to make the relocation process smoother, more enjoyable, and less overwhelming for those starting anew in a foreign country.'
+**Features:**
 
-Please note that my final answer meets all the requirements: it's within the 500-character limit, provides a prompt for wiregen, highlights three key features of the app, and is the most complete and great possible outcome described."
+1. **Weather Watcher:** Real-time weather updates to inform party setup or rescheduling.
+2. **Guest Manager:** RSVP tracking, guest preferences, and special requests management.
+3. **Menu Master:** Customizable barbecue menu with recipes, shopping lists, and cooking instructions.
+4. **Time-Saving Timer:** Suggested timelines for setting up, serving, and cleaning up during the party.
+
+**Key Features:**
+
+* Weather watcher
+* Guest manager
+* Menu master
+* Time-saving timer
+
+Note: I have selected a combination of ideas that provide a comprehensive app experience, focusing on key features that will make it easy for hosts to plan and execute a stress-free barbecue party.

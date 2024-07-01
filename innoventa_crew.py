@@ -74,6 +74,32 @@ sw_engineer = Agent(
   llm = llm
 )
 
+sw_architect = Agent(
+  role='Senior Software Architect',
+  goal='Create a list of screens for the solution of the solution_picker',
+  verbose=True,
+  memory=True,
+  backstory=(
+    "You are an experienced Software Architect."
+    "You are able to break down a software solution into distinct screens and describe them."
+  ),
+  allow_delegation=False,
+  llm = llm
+)
+
+sw_frontend_dev = Agent(
+  role='Senior Software Frontend developer',
+  goal='create html frontends for the screens that the sw_architect described.',
+  verbose=True,
+  memory=True,
+  backstory=(
+    "You are an experienced frontend dev."
+    "You are able to create html files for the desired solution."
+  ),
+  allow_delegation=False,
+  llm = llm
+)
+
 # ----------------------------------------------------------------------------------------------
 # Tasks
 # ----------------------------------------------------------------------------------------------
@@ -132,16 +158,41 @@ collect_sollutions = Task(
   verbose=True
 )
 
-build_prototype = Task(
+generate_prototype_prompt = Task(
   description=(
     "Pick the best of the ideas of the solution_list."
     "Describe the goal and three key features of your app as a prompt for wiregen."
-    "Use max 500 characters."
+    "Use max 300 characters."
   ),
   expected_output='a prompt for wiregen with 500 characters.',
   agent=solution_picker,
   async_execution=False,
   output_file='solution_prompt.md',  
+  verbose=True
+)
+
+solution_break_down = Task(
+  description=(
+    "Pick the best of the ideas of the solution_list."
+    "Break this solution down into single screens that can be created using html."
+    "For each screan create a name and a list of features."
+  ),
+  expected_output='a list of screens with their names and features.',
+  agent=sw_architect,
+  async_execution=False,
+  output_file='solution_breakdown.md',  
+  verbose=True
+)
+
+build_prototype = Task(
+  description=(
+    "Use the solution breakdown."
+    "For each screen create an html file with the described features. "
+    "Store those files as html files."
+  ),
+  expected_output='html files for each screen.',
+  agent=sw_frontend_dev,
+  async_execution=False,  
   verbose=True
 )
 
@@ -153,11 +204,11 @@ from crewai import Crew, Process
 
 # Forming the tech-focused crew with some enhanced configurations
 crew = Crew(
-  agents=[interviewer, potential_customer, ux_converger, sw_engineer],
-  tasks=[interview, answer_questions, create_challenge, collect_sollutions, build_prototype],
+  agents=[interviewer, potential_customer, ux_converger, sw_engineer, sw_architect, sw_frontend_dev],
+  tasks=[interview, answer_questions, create_challenge, collect_sollutions, generate_prototype_prompt, solution_break_down, build_prototype],
   process=Process.sequential  # Optional: Sequential task execution is default
 )
 
 # Starting the task execution process with enhanced feedback
-result = crew.kickoff(inputs={'topic': 'Offering relocation services to own employees as an international company'})
+result = crew.kickoff(inputs={'topic': 'plan a barbecue party'})
 print(result)
